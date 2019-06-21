@@ -1,0 +1,16 @@
+{
+  "name": "Filterable-List",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/views/*.html",
+    "build": "parcel build src/views/*.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
