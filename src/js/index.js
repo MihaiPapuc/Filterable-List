@@ -11,17 +11,39 @@ function filterList() {
   // get element ul
   const ul = document.getElementById('list');
 
-  //   get lis form ul
-  const li = ul.querySelectorAll('li.collection-item');
+  // get list actions
+  const listActions = ul.getElementsByClassName('list-group-item-action');
 
-  // loop through ul
-  for (let i = 0; i < li.length; i++) {
-    const a = li[i].getElementsByTagName('a')[0];
-    // check----//if minim one element match
-    if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
-      li[i].style.display = '';
-    } else {
-      li[i].style.display = 'none';
-    }
+  // loop through list actions
+  // for (const listAction of listActions) {
+  //   if (listAction.innerHTML.toUpperCase().includes(filterValue)) {
+  //     listAction.style.display = '';
+  //   } else {
+  //     listAction.style.display = 'none';
+  //   }
+  // }
+
+  for (const listAction of listActions) {
+    listAction.style.display = listAction.innerHTML
+      .toUpperCase()
+      .includes(filterValue)
+      ? ''
+      : 'none';
   }
+
+  // listActions.forEach(listAction => {
+  //   if (listAction.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+  //     listAction.style.display = '';
+  //   } else {
+  //     listAction.style.display = 'none';
+  //   }
+  // });
+
+  // for (let i = 0; i < listActions.length; i++) {
+  //   if (listActions[i].innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+  //     listActions[i].style.display = '';
+  //   } else {
+  //     listActions[i].style.display = 'none';
+  //   }
+  // }
 }
